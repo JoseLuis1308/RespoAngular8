@@ -1,0 +1,4 @@
+Para crear un componente hay que estar en la carpeta que se quiere crear y abrir el teminal.
+Se escribe:  ng g c correo    por ejemplo.
+g es lo mismo que poner generate y c es lo mismo que poner component. correro es el nombre del componente que 
+queremos crear.

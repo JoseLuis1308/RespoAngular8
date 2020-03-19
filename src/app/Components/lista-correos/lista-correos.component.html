@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <th>Leido   </th>
+        <th>Emisor</th>
+        <th>titulo</th>
+    </tr>
+    <tr>
+        <td>{{correos[0].emisor}}</td>
+        <td>{{correos[0].titulo}}</td>
+    </tr>
+    <tr>
+        <td>{{correos[1].emisor}}</td>
+        <td>{{correos[1].titulo}}</td>
+    </tr>
+<!--Esto de arriba, para hacerlo con un for en angular se hace de la siguiente manera-->
+    <tr><td><b>HECHO CON ngFor</b></td></tr>
+    <tr *ngFor="let correo of correos">
+        <td *ngIf="correo.leido">Leído</td> 
+        <td *ngIf="!correo.leido">No leído</td> 
+        <td>{{correo.emisor}}</td>
+        <td>{{correo.titulo}}</td>
+    </tr>
+</table>
