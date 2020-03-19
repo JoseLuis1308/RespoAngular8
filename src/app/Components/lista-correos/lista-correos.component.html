@@ -14,10 +14,16 @@
     </tr>
 <!--Esto de arriba, para hacerlo con un for en angular se hace de la siguiente manera-->
     <tr><td><b>HECHO CON ngFor</b></td></tr>
-    <tr *ngFor="let correo of correos">
-        <td *ngIf="correo.leido">Leído</td> 
-        <td *ngIf="!correo.leido">No leído</td> 
+    <tr *ngFor="let correo of correos; index as i">
+        <td>
+            <input type="radio" name="leido-{{i}}" [(ngModel)]="correo.leido" [value]=true> Si
+            <input type="radio" name="leido-{{i}}" [(ngModel)]="correo.leido" [value]=false> No
+        </td>
         <td>{{correo.emisor}}</td>
         <td>{{correo.titulo}}</td>
     </tr>
 </table>
+
+<h2>Estado de lectura del correo 1:</h2>
+<h3 *ngIf="correos[0].leido">Si</h3>
+<h3 *ngIf="!correos[0].leido">No</h3>
