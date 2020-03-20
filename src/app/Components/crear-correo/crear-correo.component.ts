@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';//Importar EventEmitter
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-correo',
@@ -11,6 +11,7 @@ export class CrearCorreoComponent implements OnInit {
   nuevoCorreo: FormGroup;
   submitted= false;
   @Input() correo:any;
+  @Output() accionRealizada: EventEmitter<any>=new EventEmitter(); //Crear @Output.
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -51,6 +52,7 @@ export class CrearCorreoComponent implements OnInit {
     onReset() {
         this.submitted = false;
         this.nuevoCorreo.reset();
+        this.accionRealizada.emit();//añadir la emisión.
     }
 
 }

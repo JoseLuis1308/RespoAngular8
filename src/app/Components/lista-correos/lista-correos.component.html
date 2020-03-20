@@ -20,7 +20,9 @@
             </td>
         </tr>
         <tr *ngIf="correo.responder">
-            <app-crear-correo  [correo]="correo"></app-crear-correo>
+            <app-crear-correo  [correo]="correo" (accionRealizada)="accionRespuestaRapida(correo)"></app-crear-correo>
+            <!--Puede pasarse de esta manera el correo a accionRespuestaRápida() porque  se encuentra en un ng-containter, 
+                si no, no se podría-->
         </tr>
     </ng-container> 
 </table>

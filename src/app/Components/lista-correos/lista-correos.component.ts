@@ -50,6 +50,9 @@ export class ListaCorreosComponent implements OnInit {
       leido: false,
     });
    }
+   accionRespuestaRapida(correo){
+     correo.responder=false;
+   }
 
    clickResponder(correo){
      //this.responder=!this.responder;
